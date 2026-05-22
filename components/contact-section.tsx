@@ -10,44 +10,44 @@ import { QuoteModal } from "./quote-modal"
 
 const contactInfo = [
   {
-    icon: MapPin,
-    title: "Endereco",
-    details: ["Luanda, Angola", "Rua Rainha Ginga, N.123, Edificio AnyConnect"]
-  },
-  {
     icon: Phone,
-    title: "Telefone",
-    details: ["+244 923 000 000", "+244 222 000 000"]
+    title: "WhatsApp",
+    details: ["+244 957 844 787", "Disponível para contacto"]
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@anyconnect.ao", "suporte@anyconnect.ao"]
+    details: ["manueldiogotomas@gmail.com", "Resposta em 24-48h"]
+  },
+  {
+    icon: MapPin,
+    title: "Localização",
+    details: ["Luanda, Angola", "Timezone: UTC+1"]
   },
   {
     icon: Clock,
-    title: "Horario",
-    details: ["Segunda a Sexta: 8h - 18h", "Suporte Tecnico: 24/7"]
+    title: "Disponibilidade",
+    details: ["Segunda a Sexta: 09:00-18:00", "Projetos freelance aberto"]
   }
 ]
 
 const quickActions = [
   {
     icon: Building2,
-    title: "Orcamento Empresarial",
-    description: "Receba uma proposta personalizada",
+    title: "Solicitar Orcamento",
+    description: "Para seu projeto de desenvolvimento",
     action: "quote"
   },
   {
     icon: Calendar,
     title: "Agendar Reuniao",
-    description: "Fale com um consultor",
+    description: "Fale comigo sobre seu projeto",
     action: "meeting"
   },
   {
     icon: MessageCircle,
-    title: "Suporte Tecnico",
-    description: "Assistencia 24/7",
+    title: "Contacto Direto",
+    description: "via WhatsApp",
     action: "support"
   }
 ]
@@ -94,13 +94,13 @@ export function ContactSection() {
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Vamos Conectar{" "}
-              <span className="text-gradient">Seu Negocio</span>
+              Vamos Trabalhar{" "}
+              <span className="text-gradient">Juntos</span>
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Entre em contacto com nossa equipa para uma consultoria gratuita 
-              e descubra a solucao ideal para sua empresa.
+              Entre em contacto para discutir seu projeto ou para mais informações 
+              sobre meus serviços de desenvolvimento fullstack e DevOps.
             </p>
           </div>
 
@@ -161,22 +161,35 @@ export function ContactSection() {
               
               {/* Social Links */}
               <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                <p className="text-sm text-muted-foreground mb-4">Siga-nos nas redes sociais</p>
-                <div className="flex items-center gap-3">
-                  {[
-                    { name: "Facebook", initial: "F" },
-                    { name: "LinkedIn", initial: "in" },
-                    { name: "Instagram", initial: "I" },
-                    { name: "Twitter", initial: "X" }
-                  ].map((social) => (
-                    <a 
-                      key={social.name}
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
-                    >
-                      <span className="text-xs font-medium text-muted-foreground">{social.initial}</span>
-                    </a>
-                  ))}
+                <p className="text-sm text-muted-foreground mb-4">Conecte comigo</p>
+                <div className="space-y-3">
+                  <a 
+                    href="https://github.com/MDT-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+                  >
+                    <span className="text-sm font-medium text-foreground">GitHub</span>
+                    <span className="text-xs text-muted-foreground">MDT-dev</span>
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/manuel-diogo-tomas-5001a32a6/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+                  >
+                    <span className="text-sm font-medium text-foreground">LinkedIn</span>
+                    <span className="text-xs text-muted-foreground">Manuel Diogo Tomás</span>
+                  </a>
+                  <a 
+                    href="https://wa.me/244957844787"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors"
+                  >
+                    <span className="text-sm font-medium text-foreground">WhatsApp</span>
+                    <span className="text-xs text-muted-foreground">+244 957 844 787</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -303,20 +316,21 @@ export function ContactSection() {
                         <option value="">Selecione</option>
                         {formType === "support" ? (
                           <>
-                            <option value="connectivity">Problema de Conectividade</option>
-                            <option value="slowness">Lentidao na Conexao</option>
-                            <option value="outage">Servico Indisponivel</option>
-                            <option value="billing">Faturacao</option>
-                            <option value="other">Outro</option>
+                            <option value="web">Desenvolvimento Web</option>
+                            <option value="mobile">Desenvolvimento Mobile</option>
+                            <option value="backend">Backend / APIs</option>
+                            <option value="devops">DevOps / Infraestrutura</option>
+                            <option value="maintenance">Manutenção / Suporte</option>
+                            <option value="consulting">Consultoria</option>
                           </>
                         ) : (
                           <>
-                            <option value="internet">Internet Corporativa</option>
-                            <option value="vod">Video on Demand</option>
-                            <option value="datacenter">Datacenter</option>
-                            <option value="vpn">VPN MPLS</option>
-                            <option value="ussd">USSD</option>
-                            <option value="multiple">Multiplos Servicos</option>
+                            <option value="web">Projeto Web</option>
+                            <option value="mobile">Aplicação Mobile</option>
+                            <option value="backend">Backend / API</option>
+                            <option value="devops">Infraestrutura Cloud</option>
+                            <option value="maintenance">Manutenção de Projeto</option>
+                            <option value="consulting">Consultoria Técnica</option>
                           </>
                         )}
                       </select>

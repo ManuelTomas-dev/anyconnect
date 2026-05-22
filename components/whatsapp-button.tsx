@@ -5,21 +5,21 @@ import { MessageCircle, X, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-const WHATSAPP_NUMBER = "244923000000" // Replace with actual number
+const WHATSAPP_NUMBER = "244957844787" // Manuel Diogo Tomás
 
 const quickMessages = [
-  "Quero saber mais sobre Internet Corporativa",
-  "Preciso de informacoes sobre Datacenter",
-  "Interesse em VPN MPLS",
-  "Consulta sobre Video on Demand",
-  "Falar com um consultor"
+  "Tenho um projeto web para desenvolver",
+  "Preciso de consultoria em infraestrutura cloud",
+  "Quero discutir sobre manutenção de projeto",
+  "Desenvolvimento mobile é sua especialidade?",
+  "Falar sobre orçamento"
 ]
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
 
   const openWhatsApp = (message?: string) => {
-    const encodedMessage = encodeURIComponent(message || "Ola! Gostaria de saber mais sobre os servicos da AnyConnect.")
+    const encodedMessage = encodeURIComponent(message || "Ola Manuel! Gostaria de discutir um projeto com você.")
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, "_blank")
   }
 
@@ -36,11 +36,11 @@ export function WhatsAppButton() {
           {/* Header */}
           <div className="bg-[#25D366] p-4 flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-              <span className="text-xl font-bold text-white">A</span>
+              <span className="text-xl font-bold text-white">MDT</span>
             </div>
             <div className="flex-grow">
-              <h4 className="font-semibold text-white">AnyConnect</h4>
-              <p className="text-sm text-white/80">Resposta rapida via WhatsApp</p>
+              <h4 className="font-semibold text-white">Manuel Diogo Tomás</h4>
+              <p className="text-sm text-white/80">Fullstack Developer</p>
             </div>
             <button 
               onClick={() => setIsOpen(false)}
@@ -53,7 +53,7 @@ export function WhatsAppButton() {
           {/* Content */}
           <div className="p-4">
             <p className="text-sm text-muted-foreground mb-4">
-              Ola! Como podemos ajudar? Clique numa opcao ou escreva sua mensagem.
+              Ola! Clique numa opcao para contactar ou envie sua mensagem.
             </p>
             
             <div className="space-y-2 mb-4">
