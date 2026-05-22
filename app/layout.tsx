@@ -15,15 +15,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'AnyConnect - Ligamos o Mundo ao Futuro',
-  description: 'Operadora de telecomunicacoes certificada pelo INACOM. Solucoes de Internet, Datacenter, VOD, VPN MPLS e USSD para empresas em Angola.',
-  keywords: ['telecomunicacoes', 'internet', 'datacenter', 'vpn', 'angola', 'fibra optica', 'cloud', 'hosting', 'vod', 'ussd'],
-  authors: [{ name: 'AnyConnect' }],
+  title: 'Manuel Tomás — Web Developer fullstack',
+  description:
+    'Portfólio profissional de Manuel Tomás, desenvolvedor Web especializado em JavaScript, TypeScript, React, Next.js, Node.js e desenvolvimento mobile com React Native.',
+
+  keywords: [
+    'Manuel Tomás',
+    'Web Developer',
+    'Frontend Developer',
+    'Backend Developer',
+    'JavaScript Developer',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Node.js',
+    'React Native',
+    'Mobile Developer',
+    'Programador Angola',
+    'Desenvolvedor Fullstack',
+    'Portfolio',
+    'Prisma',
+    'MySQL',
+    'Expo Router',
+  ],
+
+  authors: [{ name: 'Manuel Tomás' }],
+
+  creator: 'Manuel Tomás',
+
   openGraph: {
-    title: 'AnyConnect - Ligamos o Mundo ao Futuro',
-    description: 'Operadora de telecomunicacoes certificada pelo INACOM. Solucoes completas de conectividade para empresas em Angola.',
+    title: 'Manuel Tomás — Web Developer & JavaScript Developer',
+
+    description:
+      'Conheça o portfólio de Manuel Tomás, desenvolvedor especializado em aplicações web modernas, APIs, sistemas escaláveis e aplicações mobile.',
+
     type: 'website',
     locale: 'pt_AO',
+
+    siteName: 'Manuel Tomás Portfolio',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
