@@ -7,90 +7,96 @@ const services = [
   {
     id: 'web',
     icon: Code,
+    emoji: '🌐',
     title: 'Desenvolvimento Web',
     description: 'Aplicações web modernas, responsivas e escaláveis usando as tecnologias mais recentes.',
     features: [
-      'React.js / Next.js',
-      'Angular / Vue.js',
-      'Tailwind CSS',
-      'Responsive Design',
-      'Performance Optimization',
-      'SEO Friendly'
+      { name: 'React.js / Next.js', emoji: '⚛️' },
+      { name: 'Angular / Vue.js', emoji: '🅰️' },
+      { name: 'Tailwind CSS', emoji: '🎨' },
+      { name: 'Responsive Design', emoji: '📱' },
+      { name: 'Performance Optimization', emoji: '⚡' },
+      { name: 'SEO Friendly', emoji: '🔍' }
     ],
     color: 'from-blue-500 to-cyan-500'
   },
   {
     id: 'mobile',
     icon: Smartphone,
+    emoji: '📱',
     title: 'Desenvolvimento Mobile',
     description: 'Aplicações mobile nativas e cross-platform para iOS e Android.',
     features: [
-      'React Native',
-      'Cross-platform',
-      'Native Performance',
-      'App Store Ready',
-      'Push Notifications',
-      'Offline Support'
+      { name: 'React Native', emoji: '⚛️' },
+      { name: 'Cross-platform', emoji: '🔀' },
+      { name: 'Native Performance', emoji: '⚡' },
+      { name: 'App Store Ready', emoji: '📦' },
+      { name: 'Push Notifications', emoji: '🔔' },
+      { name: 'Offline Support', emoji: '📡' }
     ],
     color: 'from-purple-500 to-pink-500'
   },
   {
     id: 'backend',
     icon: Code,
+    emoji: '⚙️',
     title: 'Backend & APIs',
     description: 'Servidores robuustos, APIs REST/GraphQL e lógica de negócio escalável.',
     features: [
-      'Node.js / Express',
-      'Nest.js / Fastify',
-      'Python / Flask',
-      'Database Design',
-      'Authentication',
-      'Caching & Performance'
+      { name: 'Node.js / Express', emoji: '🟢' },
+      { name: 'Nest.js / Fastify', emoji: '🐱' },
+      { name: 'Python / Flask', emoji: '🐍' },
+      { name: 'Database Design', emoji: '🗄️' },
+      { name: 'Authentication', emoji: '🔐' },
+      { name: 'Caching & Performance', emoji: '⚡' }
     ],
     color: 'from-green-500 to-teal-500'
   },
   {
     id: 'devops',
     icon: Cloud,
+    emoji: '☁️',
     title: 'DevOps & Infraestrutura',
     description: 'Configuração, deploy e manutenção de infraestrutura cloud e sistemas.',
     features: [
-      'AWS / Azure / VPS',
-      'Docker & Containerization',
-      'CI/CD Pipelines',
-      'Linux Server Management',
-      'Networking',
-      'Security & Monitoring'
+      { name: 'AWS / Azure / VPS', emoji: '☁️' },
+      { name: 'Docker & Containerization', emoji: '🐳' },
+      { name: 'CI/CD Pipelines', emoji: '🔄' },
+      { name: 'Linux Server Management', emoji: '🐧' },
+      { name: 'Networking', emoji: '🌐' },
+      { name: 'Security & Monitoring', emoji: '🔒' }
     ],
     color: 'from-orange-500 to-red-500'
   },
   {
     id: 'maintenance',
     icon: Wrench,
+    emoji: '🔧',
     title: 'Manutenção & Suporte',
     description: 'Suporte técnico, correção de bugs e otimização de projetos existentes.',
     features: [
-      'Bug Fixing',
-      'Performance Tuning',
-      'Code Refactoring',
-      'Security Updates',
-      '24/7 Support',
-      'Documentation'
+      { name: 'Bug Fixing', emoji: '🐛' },
+      { name: 'Performance Tuning', emoji: '⚡' },
+      { name: 'Code Refactoring', emoji: '♻️' },
+      { name: 'Security Updates', emoji: '🔒' },
+      { name: '24/7 Support', emoji: '📞' },
+      { name: 'Documentation', emoji: '📚' }
     ],
     color: 'from-yellow-500 to-orange-500'
   },
   {
     id: 'consulting',
     icon: Eye,
+    emoji: '💡',
     title: 'Consultoria Técnica',
     description: 'Planejamento arquitetural, escolha de tecnologias e orientação de projetos.',
     features: [
-      'Architecture Design',
-      'Technology Selection',
-      'Code Review',
-      'Best Practices',
-      'Team Training',
-      'Project Planning'
+      { name: 'Architecture Design', emoji: '🏗️' },
+      { name: 'Technology Selection', emoji: '🔍' },
+      { name: 'Code Review', emoji: '👀' },
+      { name: 'Best Practices', emoji: '⭐' },
+      { name: 'Team Training', emoji: '🎓' },
+      { name: 'Project Planning', emoji: '📋' }
     ],
     color: 'from-indigo-500 to-blue-500'
   }
@@ -137,9 +143,9 @@ export function DevelopmentServices() {
                 {/* Features */}
                 <div className="space-y-2 mb-6 flex-grow">
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
+                    <div key={feature.name} className="flex items-center gap-2">
+                      <span className="text-base">{feature.emoji}</span>
+                      <span className="text-sm text-foreground/80">{feature.name}</span>
                     </div>
                   ))}
                 </div>
@@ -163,13 +169,13 @@ export function DevelopmentServices() {
           <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Processo de Trabalho</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Descoberta', desc: 'Entender suas necessidades e objetivos' },
-              { step: '02', title: 'Planejamento', desc: 'Definir arquitetura e tecnologias' },
-              { step: '03', title: 'Desenvolvimento', desc: 'Implementar com qualidade e rigor' },
-              { step: '04', title: 'Deploy & Suporte', desc: 'Lançamento e manutenção contínua' }
+              { step: '01', emoji: '🔍', title: 'Descoberta', desc: 'Entender suas necessidades e objetivos' },
+              { step: '02', emoji: '📋', title: 'Planejamento', desc: 'Definir arquitetura e tecnologias' },
+              { step: '03', emoji: '💻', title: 'Desenvolvimento', desc: 'Implementar com qualidade e rigor' },
+              { step: '04', emoji: '🚀', title: 'Deploy & Suporte', desc: 'Lançamento e manutenção contínua' }
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{item.step}</div>
+                <div className="text-4xl mb-3">{item.emoji}</div>
                 <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>

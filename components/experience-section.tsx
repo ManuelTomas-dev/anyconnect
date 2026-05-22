@@ -153,18 +153,19 @@ export function ExperienceSection() {
             <h4 className="text-lg font-semibold text-foreground mb-4">Áreas de Expertise</h4>
             <div className="flex flex-wrap gap-2">
               {[
-                'Web Development',
-                'Mobile Development',
-                'Cloud DevOps',
-                'System Design',
-                'Database Design',
-                'Project Management'
+                { name: 'Web Development', icon: '🌐' },
+                { name: 'Mobile Development', icon: '📱' },
+                { name: 'Cloud DevOps', icon: '☁️' },
+                { name: 'System Design', icon: '🏗️' },
+                { name: 'Database Design', icon: '🗄️' },
+                { name: 'Project Management', icon: '📋' }
               ].map((skill) => (
                 <span 
-                  key={skill}
-                  className="px-3 py-1 text-xs rounded-full bg-secondary border border-border text-foreground"
+                  key={skill.name}
+                  className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border text-foreground hover:border-primary/50 transition-colors flex items-center gap-1.5"
                 >
-                  {skill}
+                  <span>{skill.icon}</span>
+                  {skill.name}
                 </span>
               ))}
             </div>

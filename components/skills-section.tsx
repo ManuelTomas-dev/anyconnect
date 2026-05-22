@@ -1,37 +1,93 @@
 'use client'
 
-import { Code2, Database, Cloud, Smartphone, GitBranch, Zap } from 'lucide-react'
+import { 
+  Code2, Database, Cloud, Smartphone, GitBranch, Zap,
+  Brackets, Server, Cpu, Package, GitFork, Terminal
+} from 'lucide-react'
 
-const skillCategories = [
+interface Skill {
+  name: string
+  icon?: any
+}
+
+interface SkillCategory {
+  category: string
+  icon: any
+  skills: Skill[]
+}
+
+const skillCategories: SkillCategory[] = [
   {
     category: 'Frontend',
     icon: Code2,
-    skills: ['JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Angular', 'Tailwind CSS', 'Responsive Design']
+    skills: [
+      { name: 'JavaScript', icon: '⚡' },
+      { name: 'TypeScript', icon: '🔷' },
+      { name: 'React.js', icon: '⚛️' },
+      { name: 'Next.js', icon: '▲' },
+      { name: 'Angular', icon: '🅰️' },
+      { name: 'Tailwind CSS', icon: '🎨' },
+      { name: 'Responsive Design', icon: '📱' }
+    ]
   },
   {
     category: 'Backend',
-    icon: Database,
-    skills: ['Node.js', 'Nest.js', 'Express.js', 'FastAPI', 'Flask', 'Python', 'PHP', 'REST APIs']
+    icon: Server,
+    skills: [
+      { name: 'Node.js', icon: '🟢' },
+      { name: 'Nest.js', icon: '🐱' },
+      { name: 'Express.js', icon: '⚙️' },
+      { name: 'Python', icon: '🐍' },
+      { name: 'Flask', icon: '🍶' },
+      { name: 'FastAPI', icon: '⚡' },
+      { name: 'PHP', icon: '🐘' },
+      { name: 'REST APIs', icon: '🔌' }
+    ]
   },
   {
     category: 'DevOps & Infrastructure',
     icon: Cloud,
-    skills: ['AWS', 'Microsoft 365', 'VPS Management', 'Docker', 'Linux', 'Networking', 'CI/CD']
+    skills: [
+      { name: 'AWS', icon: '☁️' },
+      { name: 'Microsoft 365', icon: '☁️' },
+      { name: 'Docker', icon: '🐳' },
+      { name: 'Linux', icon: '🐧' },
+      { name: 'VPS Management', icon: '🖥️' },
+      { name: 'Networking', icon: '🌐' },
+      { name: 'CI/CD', icon: '🔄' }
+    ]
   },
   {
     category: 'Mobile',
     icon: Smartphone,
-    skills: ['React Native', 'Mobile Optimization', 'Cross-platform', 'PWA']
+    skills: [
+      { name: 'React Native', icon: '⚛️' },
+      { name: 'Mobile Optimization', icon: '📱' },
+      { name: 'Cross-platform', icon: '🔀' },
+      { name: 'PWA', icon: '📲' }
+    ]
   },
   {
     category: 'Databases',
     icon: Database,
-    skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Redis']
+    skills: [
+      { name: 'PostgreSQL', icon: '🐘' },
+      { name: 'MongoDB', icon: '🍃' },
+      { name: 'MySQL', icon: '🐬' },
+      { name: 'Firebase', icon: '🔥' },
+      { name: 'Redis', icon: '⚡' }
+    ]
   },
   {
     category: 'Tools & Services',
     icon: GitBranch,
-    skills: ['Git/GitHub', 'Vercel', 'NPM/Yarn', 'Testing', 'Project Management']
+    skills: [
+      { name: 'Git/GitHub', icon: '🐙' },
+      { name: 'Vercel', icon: '▲' },
+      { name: 'NPM/Yarn', icon: '📦' },
+      { name: 'Testing', icon: '✅' },
+      { name: 'Project Management', icon: '📋' }
+    ]
   }
 ]
 
@@ -70,10 +126,11 @@ export function SkillsSection() {
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span 
-                      key={skill}
-                      className="px-3 py-1 text-sm rounded-full bg-secondary text-foreground border border-border hover:border-primary/50 transition-colors"
+                      key={skill.name}
+                      className="px-3 py-1.5 text-sm rounded-full bg-secondary text-foreground border border-border hover:border-primary/50 transition-colors flex items-center gap-1.5"
                     >
-                      {skill}
+                      <span className="text-base">{skill.icon}</span>
+                      {skill.name}
                     </span>
                   ))}
                 </div>
