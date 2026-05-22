@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Wifi, Cloud, Play, Shield, MessageSquare } from "lucide-react"
 
-const services = [
-  { icon: Wifi, label: "Internet" },
-  { icon: Play, label: "VOD" },
-  { icon: Cloud, label: "Datacenter" },
-  { icon: Shield, label: "VPN" },
-  { icon: MessageSquare, label: "USSD" },
+const skills = [
+  { icon: Wifi, label: "Frontend" },
+  { icon: Cloud, label: "Backend" },
+  { icon: Shield, label: "DevOps" },
+  { icon: Play, label: "Mobile" },
+  { icon: MessageSquare, label: "Fullstack" },
 ]
 
 export function Hero() {
@@ -103,20 +103,20 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-primary font-medium">Operadora Certificada INACOM</span>
+            <span className="text-sm text-primary font-medium">Fullstack Developer & DevOps Engineer</span>
           </div>
           
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            <span className="text-foreground">Ligamos o Mundo</span>
+            <span className="text-foreground">Manuel Diogo</span>
             <br />
-            <span className="text-gradient">ao Futuro</span>
+            <span className="text-gradient">Tomás</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Solucoes completas de telecomunicacoes para empresas. 
-            Internet de alta velocidade, Datacenter, VOD, VPN MPLS e USSD.
+            Desenvolvedor fullstack com experiência em JavaScript, TypeScript, React, Node.js e infraestrutura cloud. 
+            Especialista em construir soluções escaláveis e modernas com foco em qualidade e desempenho.
           </p>
           
           {/* CTA Buttons */}
@@ -126,36 +126,35 @@ export function Hero() {
                 size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-14 text-base font-medium group"
               >
-                Solicitar Proposta
+                Contactar Agora
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <a href="#services">
+            <a href="#projects">
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="rounded-full px-8 h-14 text-base font-medium border-border hover:bg-secondary"
               >
-                Explorar Servicos
+                Ver Projetos
               </Button>
             </a>
           </div>
           
-          {/* Service Icons */}
+          {/* Skill Areas */}
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            {services.map((service) => (
-              <a 
-                key={service.label}
-                href={`#${service.label.toLowerCase()}-detail`}
+            {skills.map((skill) => (
+              <div 
+                key={skill.label}
                 className="flex flex-col items-center gap-2 group cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-2xl bg-secondary/50 border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
-                  <service.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <skill.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                  {service.label}
+                  {skill.label}
                 </span>
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -163,10 +162,10 @@ export function Hero() {
         {/* Stats */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "10+", label: "Anos de Experiencia" },
-            { value: "500+", label: "Clientes Corporativos" },
-            { value: "99.9%", label: "Uptime Garantido" },
-            { value: "24/7", label: "Suporte Tecnico" },
+            { value: "8+", label: "Projetos Completados" },
+            { value: "100+", label: "Clientes Satisfeitos" },
+            { value: "5+", label: "Anos de Experiencia" },
+            { value: "10+", label: "Tecnologias" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-foreground mb-2">{stat.value}</div>

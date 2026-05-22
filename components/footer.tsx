@@ -5,28 +5,22 @@ import { ArrowUpRight } from "lucide-react"
 
 const footerLinks = {
   servicos: [
-    { name: "Internet Corporativa", href: "#internet" },
-    { name: "Video on Demand", href: "#vod" },
-    { name: "Datacenter", href: "#datacenter" },
-    { name: "VPN MPLS", href: "#vpn" },
-    { name: "USSD", href: "#ussd" },
+    { name: "Desenvolvimento Web", href: "#services" },
+    { name: "Desenvolvimento Mobile", href: "#services" },
+    { name: "Backend & APIs", href: "#services" },
+    { name: "DevOps & Infraestrutura", href: "#services" },
   ],
-  empresa: [
-    { name: "Sobre Nos", href: "#about" },
-    { name: "Noticias", href: "#news" },
-    { name: "Carreiras", href: "#" },
-    { name: "Parceiros", href: "#" },
+  sobre: [
+    { name: "Sobre Mim", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projetos", href: "#projects" },
+    { name: "Experiência", href: "#experience" },
   ],
-  suporte: [
-    { name: "Central de Ajuda", href: "#" },
-    { name: "Documentacao", href: "#" },
-    { name: "Status do Servico", href: "#" },
-    { name: "Contacto", href: "#contact" },
-  ],
-  legal: [
-    { name: "Termos de Servico", href: "#" },
-    { name: "Politica de Privacidade", href: "#" },
-    { name: "SLA", href: "#" },
+  links: [
+    { name: "GitHub", href: "https://github.com/MDT-dev", external: true },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/manuel-diogo-tomas-5001a32a6/", external: true },
+    { name: "Email", href: "mailto:manueldiogotomas@gmail.com" },
+    { name: "WhatsApp", href: "https://wa.me/244957844787", external: true },
   ],
 }
 
@@ -35,32 +29,32 @@ export function Footer() {
     <footer className="relative border-t border-border bg-card/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
-        <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="relative w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
-                <span className="text-xl font-bold text-primary">A</span>
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center border border-primary/30">
+                <span className="text-lg font-bold text-white">MDT</span>
               </div>
               <span className="text-xl font-bold tracking-tight text-foreground">
-                Any<span className="text-primary">Connect</span>
+                Manuel<span className="text-primary">.</span>Dev
               </span>
             </Link>
             
             <p className="text-sm text-muted-foreground mb-6 max-w-xs leading-relaxed">
-              Operadora de telecomunicacoes certificada pelo INACOM. 
-              Conectando Angola ao mundo digital.
+              Fullstack Developer & DevOps Engineer especializado em soluções web, 
+              mobile e infraestrutura cloud escalável.
             </p>
             
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span>Todos os servicos operacionais</span>
+              <span>Disponível para projetos</span>
             </div>
           </div>
           
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Servicos</h4>
+            <h4 className="font-semibold text-foreground mb-4">Serviços</h4>
             <ul className="space-y-3">
               {footerLinks.servicos.map((link) => (
                 <li key={link.name}>
@@ -75,11 +69,11 @@ export function Footer() {
             </ul>
           </div>
           
-          {/* Company */}
+          {/* About */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Empresa</h4>
+            <h4 className="font-semibold text-foreground mb-4">Sobre</h4>
             <ul className="space-y-3">
-              {footerLinks.empresa.map((link) => (
+              {footerLinks.sobre.map((link) => (
                 <li key={link.name}>
                   <Link 
                     href={link.href}
@@ -92,35 +86,29 @@ export function Footer() {
             </ul>
           </div>
           
-          {/* Support */}
+          {/* Social & Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Suporte</h4>
+            <h4 className="font-semibold text-foreground mb-4">Conecte-se</h4>
             <ul className="space-y-3">
-              {footerLinks.suporte.map((link) => (
+              {footerLinks.links.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Legal */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a 
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -130,18 +118,18 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} AnyConnect. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Manuel Diogo Tomás. Todos os direitos reservados.
           </p>
           
           <div className="flex items-center gap-6">
-            <span className="text-sm text-muted-foreground">Certificado INACOM</span>
+            <span className="text-sm text-muted-foreground">Made with Next.js & Tailwind</span>
             <a 
-              href="https://www.anyconnect.ao" 
+              href="https://github.com/MDT-dev" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-sm text-primary hover:underline"
             >
-              www.anyconnect.ao
+              github.com/MDT-dev
               <ArrowUpRight className="w-3 h-3" />
             </a>
           </div>
