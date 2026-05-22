@@ -2,10 +2,16 @@
 
 import { ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiAngular, SiTailwindcss,
+  SiNodedotjs, SiNestjs, SiExpress, SiPython, SiFlask, SiFastapi, SiPhp,
+  SiDocker, SiLinux, SiGit, SiGithub, SiNpm,
+  SiPostgresql, SiMongodb, SiMysql, SiFirebase, SiRedis, SiVercel
+} from 'react-icons/si'
 
 interface Technology {
   name: string
-  icon: string
+  Icon: any
 }
 
 interface Project {
@@ -17,41 +23,17 @@ interface Project {
   type: string
 }
 
-const getTechIcon = (tech: string): string => {
-  const iconMap: { [key: string]: string } = {
-    'Next.js': '▲',
-    'React': '⚛️',
-    'Angular': '🅰️',
-    'Node.js': '🟢',
-    'Express.js': '⚙️',
-    'MongoDB': '🍃',
-    'PostgreSQL': '🐘',
-    'MySQL': '🐬',
-    'Firebase': '🔥',
-    'Redis': '⚡',
-    'Stripe': '💳',
-    'Tailwind CSS': '🎨',
-    'JWT': '🔐',
-    'RLS': '🔒',
-    'Charts': '📊',
-    'Vercel': '▲',
-    'CMS': '📝',
-    'Responsive Design': '📱'
-  }
-  return iconMap[tech] || '💻'
-}
-
 const projects: Project[] = [
   {
     id: 1,
     title: 'Milones',
     description: 'Sistema de e-commerce com gestão de stock, afiliação e múltiplos produtos. Integração de pagamentos e dashboard administrativo.',
     technologies: [
-      { name: 'Next.js', icon: '▲' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'MongoDB', icon: '🍃' },
-      { name: 'Stripe', icon: '💳' },
-      { name: 'Tailwind CSS', icon: '🎨' }
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'MongoDB', Icon: SiMongodb },
+      { name: 'Stripe', Icon: SiNextdotjs },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss }
     ],
     url: 'https://www.milones.ao/',
     type: 'E-commerce'
@@ -61,10 +43,10 @@ const projects: Project[] = [
     title: 'FSIL',
     description: 'Plataforma de venda de produtos de TI e câmaras de segurança com gestão de inventário, catálogo online e sistema de pedidos.',
     technologies: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'Express.js', icon: '⚙️' },
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'Tailwind CSS', icon: '🎨' }
+      { name: 'React', Icon: SiReact },
+      { name: 'Express.js', Icon: SiExpress },
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss }
     ],
     url: 'https://www.fsil.ao/',
     type: 'E-commerce'
@@ -74,10 +56,10 @@ const projects: Project[] = [
     title: 'Switch and Plug',
     description: 'Empresa de prestação de serviços de TI e vendas com site institucional, portfólio de serviços e sistema de contacto.',
     technologies: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Firebase', icon: '🔥' },
-      { name: 'Tailwind CSS', icon: '🎨' }
+      { name: 'React', Icon: SiReact },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'Firebase', Icon: SiFirebase },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss }
     ],
     url: 'https://www.switchandplug.co.ao/',
     type: 'Institucional'
@@ -87,10 +69,10 @@ const projects: Project[] = [
     title: 'Mundo Saudável',
     description: 'Plataforma de vendas de materiais agrícolas com catálogo, carrinho de compras e integração de pagamentos.',
     technologies: [
-      { name: 'Next.js', icon: '▲' },
-      { name: 'Stripe', icon: '💳' },
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'Vercel', icon: '▲' }
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Stripe', Icon: SiNextdotjs },
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'Vercel', Icon: SiVercel }
     ],
     url: 'https://mundo-saudavel.vercel.app/',
     type: 'E-commerce'
@@ -100,10 +82,10 @@ const projects: Project[] = [
     title: 'Havre Design',
     description: 'Portfólio de arquitectura e design com showcases de projetos, galeria de imagens, orçamentos online e contacto.',
     technologies: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'Tailwind CSS', icon: '🎨' },
-      { name: 'CMS', icon: '📝' },
-      { name: 'Responsive Design', icon: '📱' }
+      { name: 'React', Icon: SiReact },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'MongoDB', Icon: SiMongodb }
     ],
     url: 'https://www.havredesign.ao/',
     type: 'Portfólio'
@@ -113,11 +95,11 @@ const projects: Project[] = [
     title: 'Cursus',
     description: 'Plataforma de cursos online com sistema de pagamento integrado, perfil de alunos e gestão de conteúdo.',
     technologies: [
-      { name: 'Next.js', icon: '▲' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Stripe', icon: '💳' },
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'Tailwind CSS', icon: '🎨' }
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'Stripe', Icon: SiNextdotjs },
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss }
     ],
     url: 'https://www.cursus.ao/',
     type: 'E-learning'
@@ -127,11 +109,11 @@ const projects: Project[] = [
     title: 'CondoFlow',
     description: 'Sistema de gestão de condomínios com módulos de pagamento de faturas, segurança, registros de moradores e visitas.',
     technologies: [
-      { name: 'Angular', icon: '🅰️' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'JWT', icon: '🔐' },
-      { name: 'RLS', icon: '🔒' }
+      { name: 'Angular', Icon: SiAngular },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'TypeScript', Icon: SiTypescript },
+      { name: 'Express.js', Icon: SiExpress }
     ],
     url: 'https://condoflow.netag.ao/',
     type: 'SaaS'
@@ -141,11 +123,11 @@ const projects: Project[] = [
     title: 'Mwanganza',
     description: 'Plataforma de gestão de centro médico com perfis de admin, paciente, farmacêutico, doutor e recepcionista. Gestão de faturas, consultas, exames e farmácia.',
     technologies: [
-      { name: 'React', icon: '⚛️' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'JWT', icon: '🔐' },
-      { name: 'Charts', icon: '📊' }
+      { name: 'React', Icon: SiReact },
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'TypeScript', Icon: SiTypescript },
+      { name: 'Express.js', Icon: SiExpress }
     ],
     url: 'https://mwanganza.vercel.app/',
     type: 'Healthcare'
@@ -204,15 +186,18 @@ export function ProjectsSection() {
 
               {/* Technologies */}
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span 
-                    key={tech.name}
-                    className="px-2.5 py-1.5 text-xs rounded-md bg-secondary border border-border text-foreground hover:border-primary/50 transition-colors flex items-center gap-1"
-                  >
-                    <span className="text-sm">{tech.icon}</span>
-                    {tech.name}
-                  </span>
-                ))}
+                {project.technologies.map((tech) => {
+                  const TechIcon = tech.Icon
+                  return (
+                    <span 
+                      key={tech.name}
+                      className="px-2.5 py-1.5 text-xs rounded-md bg-secondary border border-border text-foreground hover:border-primary/50 transition-colors flex items-center gap-1.5"
+                    >
+                      <TechIcon className="w-3.5 h-3.5" />
+                      {tech.name}
+                    </span>
+                  )
+                })}
               </div>
 
               {/* Visit Button */}

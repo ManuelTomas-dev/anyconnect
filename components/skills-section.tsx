@@ -1,13 +1,16 @@
 'use client'
 
+import { Code2, Database, Cloud, Smartphone, GitBranch, Server } from 'lucide-react'
 import { 
-  Code2, Database, Cloud, Smartphone, GitBranch, Zap,
-  Brackets, Server, Cpu, Package, GitFork, Terminal
-} from 'lucide-react'
+  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiAngular, SiTailwindcss,
+  SiNodedotjs, SiNestjs, SiExpress, SiPython, SiFlask, SiFastapi, SiPhp,
+  SiDocker, SiLinux, SiGit, SiGithub, SiNpm,
+  SiPostgresql, SiMongodb, SiMysql, SiFirebase, SiRedis, SiVercel
+} from 'react-icons/si'
 
 interface Skill {
   name: string
-  icon?: any
+  Icon?: any
 }
 
 interface SkillCategory {
@@ -21,72 +24,72 @@ const skillCategories: SkillCategory[] = [
     category: 'Frontend',
     icon: Code2,
     skills: [
-      { name: 'JavaScript', icon: '⚡' },
-      { name: 'TypeScript', icon: '🔷' },
-      { name: 'React.js', icon: '⚛️' },
-      { name: 'Next.js', icon: '▲' },
-      { name: 'Angular', icon: '🅰️' },
-      { name: 'Tailwind CSS', icon: '🎨' },
-      { name: 'Responsive Design', icon: '📱' }
+      { name: 'JavaScript', Icon: SiJavascript },
+      { name: 'TypeScript', Icon: SiTypescript },
+      { name: 'React.js', Icon: SiReact },
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Angular', Icon: SiAngular },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss },
+      { name: 'Responsive Design', Icon: Smartphone }
     ]
   },
   {
     category: 'Backend',
     icon: Server,
     skills: [
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Nest.js', icon: '🐱' },
-      { name: 'Express.js', icon: '⚙️' },
-      { name: 'Python', icon: '🐍' },
-      { name: 'Flask', icon: '🍶' },
-      { name: 'FastAPI', icon: '⚡' },
-      { name: 'PHP', icon: '🐘' },
-      { name: 'REST APIs', icon: '🔌' }
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'Nest.js', Icon: SiNestjs },
+      { name: 'Express.js', Icon: SiExpress },
+      { name: 'Python', Icon: SiPython },
+      { name: 'Flask', Icon: SiFlask },
+      { name: 'FastAPI', Icon: SiFastapi },
+      { name: 'PHP', Icon: SiPhp },
+      { name: 'REST APIs', Icon: Code2 }
     ]
   },
   {
     category: 'DevOps & Infrastructure',
     icon: Cloud,
     skills: [
-      { name: 'AWS', icon: '☁️' },
-      { name: 'Microsoft 365', icon: '☁️' },
-      { name: 'Docker', icon: '🐳' },
-      { name: 'Linux', icon: '🐧' },
-      { name: 'VPS Management', icon: '🖥️' },
-      { name: 'Networking', icon: '🌐' },
-      { name: 'CI/CD', icon: '🔄' }
+      { name: 'AWS', Icon: Cloud },
+      { name: 'Microsoft 365', Icon: Code2 },
+      { name: 'Docker', Icon: SiDocker },
+      { name: 'Linux', Icon: SiLinux },
+      { name: 'VPS Management', Icon: Server },
+      { name: 'Networking', Icon: Cloud },
+      { name: 'CI/CD', Icon: SiGit }
     ]
   },
   {
     category: 'Mobile',
     icon: Smartphone,
     skills: [
-      { name: 'React Native', icon: '⚛️' },
-      { name: 'Mobile Optimization', icon: '📱' },
-      { name: 'Cross-platform', icon: '🔀' },
-      { name: 'PWA', icon: '📲' }
+      { name: 'React Native', Icon: SiReact },
+      { name: 'Mobile Optimization', Icon: Smartphone },
+      { name: 'Cross-platform', Icon: Code2 },
+      { name: 'PWA', Icon: Code2 }
     ]
   },
   {
     category: 'Databases',
     icon: Database,
     skills: [
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'MongoDB', icon: '🍃' },
-      { name: 'MySQL', icon: '🐬' },
-      { name: 'Firebase', icon: '🔥' },
-      { name: 'Redis', icon: '⚡' }
+      { name: 'PostgreSQL', Icon: SiPostgresql },
+      { name: 'MongoDB', Icon: SiMongodb },
+      { name: 'MySQL', Icon: SiMysql },
+      { name: 'Firebase', Icon: SiFirebase },
+      { name: 'Redis', Icon: SiRedis }
     ]
   },
   {
     category: 'Tools & Services',
     icon: GitBranch,
     skills: [
-      { name: 'Git/GitHub', icon: '🐙' },
-      { name: 'Vercel', icon: '▲' },
-      { name: 'NPM/Yarn', icon: '📦' },
-      { name: 'Testing', icon: '✅' },
-      { name: 'Project Management', icon: '📋' }
+      { name: 'Git/GitHub', Icon: SiGithub },
+      { name: 'Vercel', Icon: SiVercel },
+      { name: 'NPM', Icon: SiNpm },
+      { name: 'Testing', Icon: Code2 },
+      { name: 'Project Management', Icon: Code2 }
     ]
   }
 ]
@@ -124,15 +127,18 @@ export function SkillsSection() {
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span 
-                      key={skill.name}
-                      className="px-3 py-1.5 text-sm rounded-full bg-secondary text-foreground border border-border hover:border-primary/50 transition-colors flex items-center gap-1.5"
-                    >
-                      <span className="text-base">{skill.icon}</span>
-                      {skill.name}
-                    </span>
-                  ))}
+                  {category.skills.map((skill) => {
+                    const SkillIcon = skill.Icon
+                    return (
+                      <span 
+                        key={skill.name}
+                        className="px-3 py-1.5 text-sm rounded-full bg-secondary text-foreground border border-border hover:border-primary/50 transition-colors flex items-center gap-1.5"
+                      >
+                        <SkillIcon className="w-4 h-4" />
+                        {skill.name}
+                      </span>
+                    )
+                  })}
                 </div>
               </div>
             )

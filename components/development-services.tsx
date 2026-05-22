@@ -2,6 +2,12 @@
 
 import { Code, Smartphone, Cloud, Wrench, Zap, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  SiReact, SiNextdotjs, SiAngular, SiTailwindcss,
+  SiNodedotjs, SiNestjs, SiFastapi, SiPython, SiFlask,
+  SiDocker, SiLinux,
+  SiGit, SiPostgresql, SiMongodb
+} from 'react-icons/si'
 
 const services = [
   {
@@ -11,12 +17,12 @@ const services = [
     title: 'Desenvolvimento Web',
     description: 'Aplicações web modernas, responsivas e escaláveis usando as tecnologias mais recentes.',
     features: [
-      { name: 'React.js / Next.js', emoji: '⚛️' },
-      { name: 'Angular / Vue.js', emoji: '🅰️' },
-      { name: 'Tailwind CSS', emoji: '🎨' },
-      { name: 'Responsive Design', emoji: '📱' },
-      { name: 'Performance Optimization', emoji: '⚡' },
-      { name: 'SEO Friendly', emoji: '🔍' }
+      { name: 'React.js / Next.js', Icon: SiReact },
+      { name: 'Angular / Vue.js', Icon: SiAngular },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss },
+      { name: 'Responsive Design', Icon: Smartphone },
+      { name: 'Performance Optimization', Icon: Zap },
+      { name: 'SEO Friendly', Icon: Code }
     ],
     color: 'from-blue-500 to-cyan-500'
   },
@@ -27,12 +33,12 @@ const services = [
     title: 'Desenvolvimento Mobile',
     description: 'Aplicações mobile nativas e cross-platform para iOS e Android.',
     features: [
-      { name: 'React Native', emoji: '⚛️' },
-      { name: 'Cross-platform', emoji: '🔀' },
-      { name: 'Native Performance', emoji: '⚡' },
-      { name: 'App Store Ready', emoji: '📦' },
-      { name: 'Push Notifications', emoji: '🔔' },
-      { name: 'Offline Support', emoji: '📡' }
+      { name: 'React Native', Icon: SiReact },
+      { name: 'Cross-platform', Icon: Code },
+      { name: 'Native Performance', Icon: Zap },
+      { name: 'App Store Ready', Icon: Code },
+      { name: 'Push Notifications', Icon: Code },
+      { name: 'Offline Support', Icon: Code }
     ],
     color: 'from-purple-500 to-pink-500'
   },
@@ -43,12 +49,12 @@ const services = [
     title: 'Backend & APIs',
     description: 'Servidores robuustos, APIs REST/GraphQL e lógica de negócio escalável.',
     features: [
-      { name: 'Node.js / Express', emoji: '🟢' },
-      { name: 'Nest.js / Fastify', emoji: '🐱' },
-      { name: 'Python / Flask', emoji: '🐍' },
-      { name: 'Database Design', emoji: '🗄️' },
-      { name: 'Authentication', emoji: '🔐' },
-      { name: 'Caching & Performance', emoji: '⚡' }
+      { name: 'Node.js / Express', Icon: SiNodedotjs },
+      { name: 'Nest.js / Fastify', Icon: SiNestjs },
+      { name: 'Python / Flask', Icon: SiPython },
+      { name: 'Database Design', Icon: SiPostgresql },
+      { name: 'Authentication', Icon: Code },
+      { name: 'Caching & Performance', Icon: Zap }
     ],
     color: 'from-green-500 to-teal-500'
   },
@@ -59,12 +65,12 @@ const services = [
     title: 'DevOps & Infraestrutura',
     description: 'Configuração, deploy e manutenção de infraestrutura cloud e sistemas.',
     features: [
-      { name: 'AWS / Azure / VPS', emoji: '☁️' },
-      { name: 'Docker & Containerization', emoji: '🐳' },
-      { name: 'CI/CD Pipelines', emoji: '🔄' },
-      { name: 'Linux Server Management', emoji: '🐧' },
-      { name: 'Networking', emoji: '🌐' },
-      { name: 'Security & Monitoring', emoji: '🔒' }
+      { name: 'AWS / Azure / VPS', Icon: Cloud },
+      { name: 'Docker & Containerization', Icon: SiDocker },
+      { name: 'CI/CD Pipelines', Icon: SiGit },
+      { name: 'Linux Server Management', Icon: SiLinux },
+      { name: 'Networking', Icon: Cloud },
+      { name: 'Security & Monitoring', Icon: Code }
     ],
     color: 'from-orange-500 to-red-500'
   },
@@ -75,12 +81,12 @@ const services = [
     title: 'Manutenção & Suporte',
     description: 'Suporte técnico, correção de bugs e otimização de projetos existentes.',
     features: [
-      { name: 'Bug Fixing', emoji: '🐛' },
-      { name: 'Performance Tuning', emoji: '⚡' },
-      { name: 'Code Refactoring', emoji: '♻️' },
-      { name: 'Security Updates', emoji: '🔒' },
-      { name: '24/7 Support', emoji: '📞' },
-      { name: 'Documentation', emoji: '📚' }
+      { name: 'Bug Fixing', Icon: Code },
+      { name: 'Performance Tuning', Icon: Zap },
+      { name: 'Code Refactoring', Icon: Code },
+      { name: 'Security Updates', Icon: Code },
+      { name: '24/7 Support', Icon: Code },
+      { name: 'Documentation', Icon: Code }
     ],
     color: 'from-yellow-500 to-orange-500'
   },
@@ -91,12 +97,12 @@ const services = [
     title: 'Consultoria Técnica',
     description: 'Planejamento arquitetural, escolha de tecnologias e orientação de projetos.',
     features: [
-      { name: 'Architecture Design', emoji: '🏗️' },
-      { name: 'Technology Selection', emoji: '🔍' },
-      { name: 'Code Review', emoji: '👀' },
-      { name: 'Best Practices', emoji: '⭐' },
-      { name: 'Team Training', emoji: '🎓' },
-      { name: 'Project Planning', emoji: '📋' }
+      { name: 'Architecture Design', Icon: Code },
+      { name: 'Technology Selection', Icon: Code },
+      { name: 'Code Review', Icon: Code },
+      { name: 'Best Practices', Icon: Code },
+      { name: 'Team Training', Icon: Code },
+      { name: 'Project Planning', Icon: Code }
     ],
     color: 'from-indigo-500 to-blue-500'
   }
@@ -142,12 +148,15 @@ export function DevelopmentServices() {
 
                 {/* Features */}
                 <div className="space-y-2 mb-6 flex-grow">
-                  {service.features.map((feature) => (
-                    <div key={feature.name} className="flex items-center gap-2">
-                      <span className="text-base">{feature.emoji}</span>
-                      <span className="text-sm text-foreground/80">{feature.name}</span>
-                    </div>
-                  ))}
+                  {service.features.map((feature) => {
+                    const FeatureIcon = feature.Icon
+                    return (
+                      <div key={feature.name} className="flex items-center gap-2">
+                        <FeatureIcon className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-sm text-foreground/80">{feature.name}</span>
+                      </div>
+                    )
+                  })}
                 </div>
 
                 {/* CTA Button */}
@@ -169,17 +178,22 @@ export function DevelopmentServices() {
           <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Processo de Trabalho</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { step: '01', emoji: '🔍', title: 'Descoberta', desc: 'Entender suas necessidades e objetivos' },
-              { step: '02', emoji: '📋', title: 'Planejamento', desc: 'Definir arquitetura e tecnologias' },
-              { step: '03', emoji: '💻', title: 'Desenvolvimento', desc: 'Implementar com qualidade e rigor' },
-              { step: '04', emoji: '🚀', title: 'Deploy & Suporte', desc: 'Lançamento e manutenção contínua' }
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="text-4xl mb-3">{item.emoji}</div>
-                <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+              { step: '01', Icon: Eye, title: 'Descoberta', desc: 'Entender suas necessidades e objetivos' },
+              { step: '02', Icon: Code, title: 'Planejamento', desc: 'Definir arquitetura e tecnologias' },
+              { step: '03', Icon: Zap, title: 'Desenvolvimento', desc: 'Implementar com qualidade e rigor' },
+              { step: '04', Icon: Wrench, title: 'Deploy & Suporte', desc: 'Lançamento e manutenção contínua' }
+            ].map((item) => {
+              const StepIcon = item.Icon
+              return (
+                <div key={item.step} className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <StepIcon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
