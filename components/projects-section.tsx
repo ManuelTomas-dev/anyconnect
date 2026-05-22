@@ -21,6 +21,7 @@ interface Project {
   technologies: Technology[]
   url: string
   type: string
+  image: string
 }
 
 const projects: Project[] = [
@@ -28,6 +29,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Milones',
     description: 'Sistema de e-commerce com gestão de stock, afiliação e múltiplos produtos. Integração de pagamentos e dashboard administrativo.',
+    image: '/projects/milones.jpg',
     technologies: [
       { name: 'Next.js', Icon: SiNextdotjs },
       { name: 'Node.js', Icon: SiNodedotjs },
@@ -42,6 +44,7 @@ const projects: Project[] = [
     id: 2,
     title: 'FSIL',
     description: 'Plataforma de venda de produtos de TI e câmaras de segurança com gestão de inventário, catálogo online e sistema de pedidos.',
+    image: '/projects/fsil.jpg',
     technologies: [
       { name: 'React', Icon: SiReact },
       { name: 'Express.js', Icon: SiExpress },
@@ -55,6 +58,7 @@ const projects: Project[] = [
     id: 3,
     title: 'Switch and Plug',
     description: 'Empresa de prestação de serviços de TI e vendas com site institucional, portfólio de serviços e sistema de contacto.',
+    image: '/projects/switchandplug.jpg',
     technologies: [
       { name: 'React', Icon: SiReact },
       { name: 'Node.js', Icon: SiNodedotjs },
@@ -68,6 +72,7 @@ const projects: Project[] = [
     id: 4,
     title: 'Mundo Saudável',
     description: 'Plataforma de vendas de materiais agrícolas com catálogo, carrinho de compras e integração de pagamentos.',
+    image: '/projects/mundo-saudavel.jpg',
     technologies: [
       { name: 'Next.js', Icon: SiNextdotjs },
       { name: 'Stripe', Icon: SiNextdotjs },
@@ -81,6 +86,7 @@ const projects: Project[] = [
     id: 5,
     title: 'Havre Design',
     description: 'Portfólio de arquitectura e design com showcases de projetos, galeria de imagens, orçamentos online e contacto.',
+    image: '/projects/havredesign.jpg',
     technologies: [
       { name: 'React', Icon: SiReact },
       { name: 'Tailwind CSS', Icon: SiTailwindcss },
@@ -94,6 +100,7 @@ const projects: Project[] = [
     id: 6,
     title: 'Cursus',
     description: 'Plataforma de cursos online com sistema de pagamento integrado, perfil de alunos e gestão de conteúdo.',
+    image: '/projects/cursus.jpg',
     technologies: [
       { name: 'Next.js', Icon: SiNextdotjs },
       { name: 'Node.js', Icon: SiNodedotjs },
@@ -108,6 +115,7 @@ const projects: Project[] = [
     id: 7,
     title: 'CondoFlow',
     description: 'Sistema de gestão de condomínios com módulos de pagamento de faturas, segurança, registros de moradores e visitas.',
+    image: '/projects/condoflow.jpg',
     technologies: [
       { name: 'Angular', Icon: SiAngular },
       { name: 'Node.js', Icon: SiNodedotjs },
@@ -122,6 +130,7 @@ const projects: Project[] = [
     id: 8,
     title: 'Mwanganza',
     description: 'Plataforma de gestão de centro médico com perfis de admin, paciente, farmacêutico, doutor e recepcionista. Gestão de faturas, consultas, exames e farmácia.',
+    image: '/projects/mwanganza.jpg',
     technologies: [
       { name: 'React', Icon: SiReact },
       { name: 'Node.js', Icon: SiNodedotjs },
@@ -151,66 +160,65 @@ export function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div 
+            <a
               key={project.id}
-              className="group flex flex-col p-6 rounded-2xl border border-border bg-background hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col h-full rounded-2xl border border-border bg-background overflow-hidden hover:border-primary/50 hover:shadow-xl transition-all duration-300"
             >
-              {/* Type Badge */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
-                  {project.type}
-                </span>
-                <div className="flex gap-2">
-                  <a href={project.url} target="_blank" rel="noopener noreferrer">
-                    <Button 
-                      size="sm" 
-                      variant="ghost"
-                      className="h-8 w-8 p-0"
-                      title="Visit Website"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </a>
+              {/* Project Image */}
+              <div className="relative w-full h-48 overflow-hidden bg-secondary">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col flex-grow p-6">
+                {/* Type Badge */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
+                    {project.type}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+
+                {/* Title and Description */}
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border">
+                  {project.technologies.slice(0, 3).map((tech) => {
+                    const TechIcon = tech.Icon
+                    return (
+                      <span 
+                        key={tech.name}
+                        className="px-2 py-1 text-xs rounded bg-secondary text-foreground flex items-center gap-1"
+                      >
+                        <TechIcon className="w-3 h-3" />
+                        <span className="hidden sm:inline">{tech.name}</span>
+                      </span>
+                    )
+                  })}
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-1 text-xs rounded bg-secondary text-muted-foreground">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
                 </div>
               </div>
-
-              {/* Title and Description */}
-              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 flex-grow">
-                {project.description}
-              </p>
-
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => {
-                  const TechIcon = tech.Icon
-                  return (
-                    <span 
-                      key={tech.name}
-                      className="px-2.5 py-1.5 text-xs rounded-md bg-secondary border border-border text-foreground hover:border-primary/50 transition-colors flex items-center gap-1.5"
-                    >
-                      <TechIcon className="w-3.5 h-3.5" />
-                      {tech.name}
-                    </span>
-                  )
-                })}
-              </div>
-
-              {/* Visit Button */}
-              <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-6">
-                <Button 
-                  variant="outline"
-                  className="w-full"
-                >
-                  Visitar Projeto
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
-              </a>
-            </div>
+            </a>
           ))}
         </div>
       </div>
