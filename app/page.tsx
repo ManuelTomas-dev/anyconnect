@@ -1,12 +1,12 @@
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { SkillsSection } from "@/components/skills-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { ExperienceSection } from "@/components/experience-section"
-import { DevelopmentServices } from "@/components/development-services"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import { Header } from "@/components/my-modules/header"
+import { Hero } from "@/components/my-modules/hero"
+import { SkillsSection } from "@/components/my-modules/skills-section"
+import { ProjectsSection } from "@/components/my-modules/projects-section"
+import { ExperienceSection } from "@/components/my-modules/experience-section"
+import { DevelopmentServices } from "@/components/my-modules/development-services"
+import { ContactSection } from "@/components/my-modules/contact-section"
+import { Footer } from "@/components/my-modules/footer"
+import { WhatsAppButton } from "@/components/my-modules/whatsapp-button"
 
 export default function Home() {
   return (

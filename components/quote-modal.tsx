@@ -14,11 +14,11 @@ interface QuoteModalProps {
 }
 
 const services = [
-  { id: "internet", name: "Internet Corporativa", icon: Wifi },
-  { id: "vod", name: "Video on Demand", icon: Play },
-  { id: "datacenter", name: "Datacenter", icon: Server },
-  { id: "vpn", name: "VPN MPLS", icon: Shield },
-  { id: "ussd", name: "USSD", icon: MessageSquare },
+  { id: "internet", name: "Criação de Site", icon: Wifi },
+  { id: "vod", name: "Manutenção de Sites", icon: Play },
+  { id: "datacenter", name: "Dominios", icon: Server },
+  { id: "vpn", name: "Email Corporativo", icon: Shield },
+  { id: "ussd", name: "Hospedagem", icon: MessageSquare },
 ]
 
 const companySize = [
